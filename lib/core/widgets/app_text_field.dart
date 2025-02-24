@@ -1,0 +1,52 @@
+import 'package:bytedev/core/theme/app_theme.dart';
+import 'package:flutter/material.dart';
+
+class AppTextField extends StatelessWidget {
+  final String labelText;
+  final String? hintText;
+  final TextEditingController controller;
+  final bool obscureText;
+  final TextInputType keyboardType;
+  final String? Function(String?)? validator;
+
+  const AppTextField({
+    super.key,
+    required this.labelText,
+    required this.controller,
+    this.obscureText = false,
+    this.keyboardType = TextInputType.text,
+    this.validator,
+    this.hintText,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(labelText),
+        TextFormField(
+          controller: controller,
+          obscureText: obscureText,
+          keyboardType: keyboardType,
+          validator: validator,
+          decoration: InputDecoration(
+              hintText: hintText,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12.0),
+                borderSide: BorderSide(
+                  color: AppTheme.primary,
+                  width: 2.0,
+                  style: BorderStyle.solid,
+                ),
+              )),
+        ),
+      ],
+    );
+  }
+}
