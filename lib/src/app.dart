@@ -7,6 +7,7 @@ import 'package:bytedev/app/views/homepage.dart';
 import 'package:bytedev/app/views/login_view.dart';
 import 'package:bytedev/app/views/main_screen.dart';
 import 'package:bytedev/app/views/onboarding_screen.dart';
+import 'package:bytedev/app/views/signup_view.dart';
 import 'package:bytedev/core/theme/app_theme.dart';
 import 'package:bytedev/services/auth_service.dart';
 import 'package:flutter/material.dart';
@@ -91,7 +92,11 @@ class _MyAppState extends State<MyApp> {
           name: '/home',
           page: () => HomePage(controller: AuthController(store)),
         ),
-        GetPage(name: '/mainPage', page: () => MainScreen())
+        GetPage(name: '/mainPage', page: () => MainScreen()),
+        GetPage(
+          name: '/signup',
+          page: () => SignupView(controller: AuthController(store)),
+        ),
       ],
       initialRoute: widget.initialRoute,
     );
