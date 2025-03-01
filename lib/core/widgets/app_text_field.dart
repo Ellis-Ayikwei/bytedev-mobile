@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class AppTextField extends StatelessWidget {
   final String labelText;
+  final TextStyle? labelStyle;
   final String? hintText;
   final TextEditingController controller;
   final bool obscureText;
@@ -17,6 +18,7 @@ class AppTextField extends StatelessWidget {
     this.keyboardType = TextInputType.text,
     this.validator,
     this.hintText,
+    this.labelStyle,
   });
 
   @override
@@ -34,6 +36,7 @@ class AppTextField extends StatelessWidget {
           validator: validator,
           decoration: InputDecoration(
               hintText: hintText,
+              labelStyle: labelStyle,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12.0),
               ),

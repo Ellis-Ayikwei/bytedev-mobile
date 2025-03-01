@@ -3,11 +3,14 @@ import 'package:bytedev/app/redux/middlewares/auth_middleware.dart';
 import 'package:bytedev/app/redux/reducers/app_reducer.dart';
 import 'package:bytedev/app/redux/states/app_state.dart';
 import 'package:bytedev/app/redux/states/auth_state.dart';
+import 'package:bytedev/app/views/forgot_password.dart';
 import 'package:bytedev/app/views/homepage.dart';
 import 'package:bytedev/app/views/login_view.dart';
 import 'package:bytedev/app/views/main_screen.dart';
 import 'package:bytedev/app/views/onboarding_screen.dart';
+import 'package:bytedev/app/views/password_reset.dart';
 import 'package:bytedev/app/views/signup_view.dart';
+import 'package:bytedev/app/views/verify_email.dart';
 import 'package:bytedev/core/theme/app_theme.dart';
 import 'package:bytedev/services/auth_service.dart';
 import 'package:flutter/material.dart';
@@ -97,8 +100,21 @@ class _MyAppState extends State<MyApp> {
           name: '/signup',
           page: () => SignupView(controller: AuthController(store)),
         ),
+        GetPage(
+          name: '/forgot_password',
+          page: () => ForgotPassword(controller: AuthController(store)),
+        ),
+        GetPage(
+          name: '/verify_email',
+          page: () => VerifyEmail(controller: AuthController(store)),
+        ),
+        GetPage(
+          name: '/reset_password',
+          page: () => PasswordReset(controller: AuthController(store)),
+        ),
       ],
       initialRoute: widget.initialRoute,
     );
   }
 }
+

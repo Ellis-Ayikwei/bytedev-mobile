@@ -28,4 +28,8 @@ class AuthController {
   void login(String phoneNumber, String password) {
     _store.dispatch(LoginAction(phoneNumber, password));
   }
+
+  void forget_password(String phoneNumber, String password) {
+    _store.dispatch(LoginAction(phoneNumber, password));
+  }
 }

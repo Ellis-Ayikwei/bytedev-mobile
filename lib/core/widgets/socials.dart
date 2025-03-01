@@ -96,15 +96,21 @@ class TermsAndConditions extends StatelessWidget {
         Flexible(
           child: Row(
             children: [
-              Checkbox(
-                value: true,
-                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                onChanged: (bool? value) {},
+              Transform.scale(
+                scale: 1.3,
+                child: Checkbox(
+                  value: true,
+                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  onChanged: (bool? value) {},
+                ),
               ),
               Flexible(
                 child: Text(
                     'By creating an account, I accept Ghana Beauty Terms of\nUse and Privacy concerns',
-                    style: TextStyle(fontSize: isSmallScreen ? 14 : 16)),
+                    style: TextStyle(fontSize: isSmallScreen ? 14 : 16,
+                    height: 1.1,
+                    ),
+                  ),
               ),
             ],
           ),
@@ -115,7 +121,16 @@ class TermsAndConditions extends StatelessWidget {
 }
 
 class BuildSocialLoginSection extends StatelessWidget {
-  const BuildSocialLoginSection({super.key});
+  final String promptText;
+  final String actionText;
+  final VoidCallback? onActionPressed;
+
+  const BuildSocialLoginSection({
+    super.key,
+    this.promptText = "Don't have an account?",
+    this.actionText = "Sign up",
+    this.onActionPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -133,14 +148,13 @@ class BuildSocialLoginSection extends StatelessWidget {
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Don\'t have an account?',
-                style: TextStyle(fontSize: isSmallScreen ? 14 : 16)),
+            Text(promptText, style: TextStyle(fontSize: isSmallScreen ? 14 : 16)),
             TextButton(
-              onPressed: () => Get.toNamed('/signup'),
-              child: Text('Sign up',
-                  style: TextStyle(
-                      color: Color(0xFFFFD1DC),
-                      fontSize: isSmallScreen ? 14 : 16)),
+              onPressed: onActionPressed ?? () => Get.toNamed('/signup'),
+              child: Text(
+                actionText,
+                style: TextStyle(color: Color(0xFFFFD1DC), fontSize: isSmallScreen ? 14 : 16),
+              ),
             ),
           ],
         ),

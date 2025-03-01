@@ -63,7 +63,7 @@ class SignupView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Lets get started',
+                        'Let\'s get started',
                         style: TextStyle(
                           fontSize: isSmallScreen ? 22 : 28,
                           fontWeight: FontWeight.w900,
@@ -143,7 +143,13 @@ class SignupView extends StatelessWidget {
                       ),
                     ],
                   ),
-                  BuildSocialLoginSection(),
+                  BuildSocialLoginSection(
+                    promptText: "Already have an account?",
+                    actionText: "Sign in",
+                    onActionPressed: () {
+                      Get.toNamed('/login');
+                    },
+                  )
                 ],
               ),
             ),
