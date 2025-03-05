@@ -11,6 +11,7 @@ class AppButton extends StatelessWidget {
   final OutlinedBorder? shape;
   final TextStyle? buttonTextStyle;
   final double? width;
+  final double? height;
 
   const AppButton(
       {super.key,
@@ -21,6 +22,7 @@ class AppButton extends StatelessWidget {
       this.textStyle,
       this.shape,
       this.width,
+      this.height,
       this.buttonTextStyle});
 
   @override
@@ -28,6 +30,7 @@ class AppButton extends StatelessWidget {
     final colors = Theme.of(context).colorScheme;
 
     return SizedBox(
+      height: height,
       width: width,
       child: TextButton(
         onPressed: isLoading ? null : onPressed,
@@ -44,10 +47,8 @@ class AppButton extends StatelessWidget {
                     ),
               )
             : TextButton.styleFrom(
-                backgroundColor:
-                    AppTheme.primary, // Deep Blue background for filled
-                foregroundColor:
-                    Colors.white, // White text color for filled button
+                backgroundColor:AppTheme.primary, // Deep Blue background for filled
+                foregroundColor:Colors.white, // White text color for filled button
                 shape: shape ??
                     RoundedRectangleBorder(
                       borderRadius:
@@ -58,12 +59,14 @@ class AppButton extends StatelessWidget {
             ? const CircularProgressIndicator(
                 color: Colors.white, // White progress indicator
               )
-            : Text(text,
+            : Text(
+                text,
                 style: buttonTextStyle ??
                     TextStyle(
                       color: isOutlined ? colors.primary : Colors.white,
                       fontSize: 16,
-                    )),
+                    ),
+              ),
       ),
     );
   }
@@ -118,3 +121,29 @@ class CustomPinField extends StatelessWidget {
     );
   }
 }
+
+
+// class TestOtp extends StatelessWidget {
+//   TestOtp({super.key});
+
+//   // final _otpPinFieldController = GlobalKey<OtpPinFieldState>();
+//   TextEditingController otpController = TextEditingController();
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return SizedBox(
+//       child: OtpPinField(
+//         controller: otpController,
+//         maxLength: 6,
+//         otpPinFieldStyle:OtpPinFieldStyle(
+//          activeFieldBackgroundColor:  Colors.pink,
+//          defaultFieldBorderColor: AppTheme.primary,
+//          activeFieldBorderColor: Colors.pinkAccent,
+//          filledFieldBorderColor:Colors.white
+//         ),
+//         onSubmit: (String text) {}, 
+//         onChange: (String text) {},
+//       ),
+//     );
+//   }
+// }

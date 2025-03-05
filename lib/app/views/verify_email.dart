@@ -73,6 +73,7 @@ class VerifyEmail extends StatelessWidget {
                           ),
                           SizedBox(height: screenSize.height * 0.05),
                           CustomPinField(),
+                          // TestOtp(),
                           SizedBox(height: screenSize.height * 0.01),
                           if (authState.error != null)
                             Padding(
