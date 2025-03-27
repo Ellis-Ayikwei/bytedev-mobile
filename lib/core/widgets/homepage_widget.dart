@@ -1,7 +1,5 @@
-
 import 'package:animations/animations.dart';
 import 'package:bytedev/app/views/category_view.dart';
-import 'package:bytedev/app/views/service_view.dart';
 import 'package:bytedev/app/views/services_view.dart';
 import 'package:bytedev/core/theme/app_theme.dart';
 import 'package:bytedev/core/widgets/category_data.dart';
