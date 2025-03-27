@@ -110,7 +110,7 @@ class LoginView extends StatelessWidget {
                             fontSize: isSmallScreen ? 20 : 25,
                           ),
                           onPressed: () {
-                            Get.toNamed('/home');
+                            Get.offAllNamed('/home');
                           },
                           width: double.infinity,
                         ),

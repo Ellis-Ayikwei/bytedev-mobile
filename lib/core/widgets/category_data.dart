@@ -13,6 +13,22 @@ const List<Map<String, dynamic>> categoryList = [
   {'title': 'Auto Services', 'image': 'assets/images/Delivery.png'},
 ];
 
+final List<Map<String, dynamic>> popularServices = [
+  {
+    'title': 'Home Cleaning',
+    'price': 'GH₵ 30.0',
+    'rating': 4.6,
+    'distance': '46 Km away',
+    'image': 'assets/images/woman.png',
+  },
+  {
+    'title': 'Plumbing Work',
+    'price': 'GH₵ 30.0',
+    'rating': 4.6,
+    'distance': '46 Km away',
+    'image': 'assets/images/man.png',
+  },
+];
 
 // services_data.dart
 const List<Map<String, dynamic>> servicesData = [

@@ -10,7 +10,7 @@ import 'package:bytedev/app/views/login_view.dart';
 import 'package:bytedev/app/views/main_screen.dart';
 import 'package:bytedev/app/views/onboarding_screen.dart';
 import 'package:bytedev/app/views/password_reset.dart';
-import 'package:bytedev/app/views/services_view.dart';
+import 'package:bytedev/app/views/service_page.dart';
 import 'package:bytedev/app/views/signup_view.dart';
 import 'package:bytedev/app/views/verify_email.dart';
 import 'package:bytedev/core/theme/app_theme.dart';

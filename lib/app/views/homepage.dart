@@ -26,9 +26,9 @@ class _HomePageState extends State<HomePage> {
   static final List<Widget> _widgetOptions = <Widget>[
     HomePageContent(),
     ServiceView(),
-    ProfileView(),
     AppointmentView(),
     ChatView(),
+    ProfileView(),
   ];
 
   void _onItemTapped(int index) {
@@ -64,50 +64,7 @@ class _HomePageState extends State<HomePage> {
 }
 
 class HomePageContent extends StatelessWidget {
-  HomePageContent({super.key});
-
-  final List<Map<String, dynamic>> categories = [
-    {'title': 'Home', 'image': 'assets/images/house.png'},
-    {'title': 'Beauty', 'image': 'assets/images/Makeup.png'},
-    {'title': 'Handyman', 'image': 'assets/images/Maintenance.png'},
-    {'title': 'Food', 'image': 'assets/images/food.png'},
-    // {'title': 'Luxury', 'image': 'assets/images/Diamond.png'},
-    // {'title': 'Pets', 'image': 'assets/images/Pets.png'},
-    // {'title': 'Auto', 'image': 'assets/images/Auto.png'},
-    // {'title': 'Garden', 'image': 'assets/images/Garden.png'},
-    // {'title': 'Cleaning', 'image': 'assets/images/Cleaning.png'},
-    // {'title': 'Health', 'image': 'assets/images/Health.png'},
-    // {'title': 'Education', 'image': 'assets/images/Education.png'},
-    // {'title': 'Others', 'image': 'assets/images/Others.png'},
-  ];
-
-  // Sample data for services
-  // final List<String> services = [
-  //   'Hairdressing',
-  //   'Chef',
-  //   'Yoga Instructor',
-  //   'Web Developer',
-  //   'Carpentry',
-  //   'Courier',
-  // ];
-
-  // Sample data for popular services
-  final List<Map<String, dynamic>> popularServices = [
-    {
-      'title': 'Home Cleaning',
-      'price': 'GH₵ 30.0',
-      'rating': 4.6,
-      'distance': '46 Km away',
-      'image': 'assets/images/woman.png',
-    },
-    {
-      'title': 'Plumbing Work',
-      'price': 'GH₵ 30.0',
-      'rating': 4.6,
-      'distance': '46 Km away',
-      'image': 'assets/images/man.png',
-    },
-  ];
+  const HomePageContent({super.key});
 
   @override
   Widget build(BuildContext context) {

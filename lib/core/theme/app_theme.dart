@@ -8,7 +8,7 @@ class AppTheme {
   static const Color softWhite = Color(0xFFFDFDFD); // Soft White
   static const Color deepRed = Color(0xFFB00020);
   static const Color primary = Color(0xFFFFD1DC);
-  static const Color lightgrey = Color.fromARGB(255, 195, 190, 190);
+  static const Color lightgrey = Color.fromARGB(255, 223, 221, 221);
 
 
   static ThemeData lightTheme = ThemeData(
